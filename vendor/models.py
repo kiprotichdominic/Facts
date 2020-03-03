@@ -7,6 +7,15 @@ class Profile(models.Model):
     email=models.EmailField()
     phone=models.IntegerField()
 
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()    
+
 class Categories(models.Model):
 
     PRODUCT_CHOICES = (
@@ -18,7 +27,7 @@ class Categories(models.Model):
     )
 
 
-    choice=models.charfield( chioces= PRODUCT_CHOICES)
+    choices=models.charfield( chioces= PRODUCT_CHOICES)
 
 
 class Products(models.Model):
