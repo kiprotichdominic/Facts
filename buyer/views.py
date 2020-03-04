@@ -6,6 +6,7 @@ from .models import *
 from .render import Render
 
 class BuyerView(TemplateView):
+<<<<<<< HEAD
     template_name = 'buyer/buyer.html'
 
 def orders(request,id):
@@ -28,3 +29,6 @@ class Pdf(View):
             'request': request
         }
         return Render.render('invoice.html', params)
+=======
+    template_name = 'buyer/index.html'
+>>>>>>> d42a3672f6191090dd6727ae013cfdd11be03b29
