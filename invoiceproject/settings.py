@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # 3rd party
+     'crispy_forms',
     
     # Local Apps
     'users.apps.UsersConfig',
@@ -142,3 +143,5 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 LOGIN_REDIRECT_URL = 'buyer'
 LOGOUT_REDIRECT_URL = 'buyer'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
