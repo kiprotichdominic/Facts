@@ -1,11 +1,7 @@
 /* NAVBAR */
 
 /* NAVBAR */
-nav{
-    position: fixed;
-    background: rgba(0, 0, 0, 0.2);
-    padding:0px 20px;
-   
-    
+.navbar{
+   background:white !important;
   }
 
