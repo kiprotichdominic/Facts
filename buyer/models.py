@@ -15,3 +15,12 @@ class Order(models.Model):
     total_price = models.DecimalField(max_digits=7, decimal_places=2)
     comments = models.TextField(blank=True)
     products = models.ManyToManyField('vendor.Products')
+
+class StatusCode(models.Model):
+    '''
+    The StatusCode model represents the status of an order in the
+    system.
+    '''
+    short_name = models.CharField(max_length=10)
+    name = models.CharField(max_length=300)
+    description = models.TextField()
