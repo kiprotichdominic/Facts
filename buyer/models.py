@@ -1,5 +1,6 @@
 from django.db import models
 #from django.contrib.auth.models import User
+from vendor/models import Product
 
 class buyer(models.Model):
     # user=OneToOneField(User)
@@ -12,6 +13,6 @@ class buyer(models.Model):
 class Order(models.Model):
     product_Name=models.CharField(max_length=200)
     Price=models.DecimalField(max_digits=5, decimal_places=2)
-    orders=models.ForeignKey(buyer,on_delete=models.CASCADE,related_name='orders')
+    buyer=models.ForeignKey(buyer,on_delete=models.CASCADE,related_name='orders')
     def __str__(self):
         return self.product_Name
