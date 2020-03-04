@@ -1,3 +1,4 @@
+virtual/
 Pipfile
 Pipfile.lock
 # Created by https://www.gitignore.io/api/django
