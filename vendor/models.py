@@ -50,3 +50,6 @@ class Products(models.Model):
 #     short_name = models.CharField(max_length=10)
 #     name = models.CharField(max_length=300)
 #     description = models.TextField()
+
+
+
