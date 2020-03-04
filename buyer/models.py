@@ -12,7 +12,8 @@ class Order(models.Model):
     the date and total price information.
     '''
     customer = models.ForeignKey(User, blank=True, on_delete=models.CASCADE)
-    status_code = models.ForeignKey('StatusCode', on_delete=models.CASCADE)
+    status_code = models.For
+    eignKey('StatusCode', on_delete=models.CASCADE)
     date_placed = models.DateTimeField(default=datetime.now)
     total_price = models.DecimalField(max_digits=7, decimal_places=2)
     comments = models.TextField(blank=True)
