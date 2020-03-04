@@ -1,4 +1,51 @@
 {% extends 'base.html' %}
 {% block content %}
+{{block.super}}
 
-{% endblock content %}
+<div class="container category">
+    <div class="row">
+        <div class="col-md-2">
+            
+                <h3>Categories</h3>
+                {% for category in category %}
+                <p>{{ category.name }}</p>
+                <div class="sidebar">
+                    <header>My App</header>
+                  <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Shortcuts</a></li>
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </div>
+                {% endfor %}
+        </div>
+    
+                <div class="col-md-2">
+                    
+                        <h3>Vendors</h3>
+                        {% for vendor in vendor %}
+                        <p>{{vendor.name}}</p>
+                        {% endfor %}
+                    
+                </div>
+                <div class="col-md-8">
+                    <h3>Products</h3>
+                    {%for product in product%}
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">{{product.name}}</h5>
+                          <p class="card-text">{{product.description}}</p>
+                          <p>{{product.price}}</p>
+                        </div>
+                      </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    
+{% endblock%}

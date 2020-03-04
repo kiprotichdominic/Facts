@@ -1,23 +1,3 @@
-from django.db import models
-<<<<<<< HEAD
-#from django.contrib.auth.models import User
-from vendor/models import Product
-
-class buyer(models.Model):
-    # user=OneToOneField(User)
-    email=models.EmailField()
-
-
-    def __str__(self):
-        return self.user.username
-
-class Order(models.Model):
-    product_Name=models.CharField(max_length=200)
-    Price=models.DecimalField(max_digits=5, decimal_places=2)
-    buyer=models.ForeignKey(buyer,on_delete=models.CASCADE,related_name='orders')
-    def __str__(self):
-        return self.product_Name
-=======
 from datetime import datetime
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -41,4 +21,3 @@ class StatusCode(models.Model):
     short_name = models.CharField(max_length=10)
     name = models.CharField(max_length=300)
     description = models.TextField()
->>>>>>> d42a3672f6191090dd6727ae013cfdd11be03b29
