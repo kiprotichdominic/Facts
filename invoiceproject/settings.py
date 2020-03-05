@@ -145,3 +145,4 @@ LOGIN_REDIRECT_URL = 'buyer'
 LOGOUT_REDIRECT_URL = 'buyer'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
