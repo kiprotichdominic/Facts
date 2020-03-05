@@ -5,7 +5,7 @@
     <h3>Register with us Today.</h3>
     <p>Already have an account? <a href="{%url 'login'%}">Login</a></p>
     {% csrf_token %} {{ form| crispy}}
-    <button type="submit">Sign up</button>
+    <button type="submit" class="btn btn-outline-success waves-effect">Sign Up</button>
   </form>
 </div>
 {% endblock content %}
