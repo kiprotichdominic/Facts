@@ -22,16 +22,29 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="flex-grow-1 d-flex">
         <form
-          class="form-inline flex-nowrap bg-light mx-0 mx-lg-auto rounded p-1"
-        >
+          class="form-inline flex-nowrap bg-light mx-0 mx-lg-auto rounded p-1" id=”search” method=”POST” action="{%url 'search'%}">
           <input
             class="form-control mr-sm-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
+            id=”txtSearch”
           />
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+        <script>
+            $(document).ready(function(){ 
+                $("#txtSearch").autocomplete({
+                    source: "/ajax_calls/search/",
+                    minLength: 2,
+                    open: function(){
+                        setTimeout(function () {
+                            $('.ui-autocomplete').css('z-index', 99);
+                        }, 0);
+                    }
+                  });
+            });
+    </script>
       </div>
       <ul class="navbar-nav mr-auto">
       {% if user.is_authenticated %}
