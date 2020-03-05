@@ -36,9 +36,7 @@
       <ul class="navbar-nav mr-auto">
       {% if user.is_authenticated %}
               <li class="nav-item active">
-            <a class="nav-link" href="{%url 'logout'%}"
-              >Log Out</a
-            >
+            <a class="nav-link" href="{%url 'logout'%}">Log Out</a>
           </li>
       {% else %}
           <li class="nav-item active">
@@ -50,13 +48,13 @@
                   <a class="dropdown-item" href="#">Another action</a>
                   <a class="dropdown-item" href="#">Something else here</a> -->
                   <div class="dropdown ">
-                      <a class=" dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a href="" class=" dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Login
                       </a>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                        
-                        <a class="dropdown-item" href="#">I am a seller</a>
-                        <a class="dropdown-item" href="#">I am a vendor</a>
+                        <a class="dropdown-item" href="{%url 'signup'%}">I am a seller</a>
+                        <a class="dropdown-item" href="{%url 'signup'%}">I am a vendor</a>
                       </div>
                     </div>
           </li>
