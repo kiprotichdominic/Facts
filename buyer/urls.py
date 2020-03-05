@@ -1,9 +1,9 @@
 from django.urls import path
 
-from .views import HomeView
 from . import views
+from buyer.views import Pdf
 
 urlpatterns = [
-    path(r'render/pdf/(?P<pk>[0-9]+)/$', Pdf.as_view())
-    path('', BuyerView.as_view(), name ='buyer'),
+    path('render/invoice/<int:id>/', Pdf.as_view()),
+    path('', views.HomeView, name ='buyer'),
 ]
