@@ -3,7 +3,7 @@
         <form action="http://127.0.0.1:8000/api/rest-auth/login/?next=/" method="POST">
             {% csrf_token %}
             {{form.as_p}}
-            <button type="submit">Login</button>
+            <button class="btn btn-outline-success waves-effect" type="submit">Login</button>
         </form>
     </div>
 </div>
