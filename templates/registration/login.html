@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="card m-3 p-3">
+        <form action="http://127.0.0.1:8000/api/rest-auth/login/?next=/" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>

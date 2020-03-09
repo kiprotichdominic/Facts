@@ -1,0 +1,48 @@
+{%  extends 'accounts/main.html' %}
+{% block content %}
+{% include 'accounts/status.html' %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card m-3 p-2">
+                <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+                <div class="media-body">
+                  <h2 class="account-heading">{{ user.username }}</h2>
+                  <p class="text-secondary">{{ user.email }}</p>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card m-3 p2">
+                <h3 class="text-center">Invoices</h3>
+                <table class="table table-sm">
+                    <tr>
+                        <th>Product</th>
+                        <th>Client</th>
+                        <th>Date Uploaded</th>
+                        <th>Status</th>
+                        <th>Update</th>
+                        <th>Remove</th>
+                    </tr>
+    
+                    {% for invoice in invoices %}
+                        <tr>
+                            <td>{{invoice.name}}</td>
+                            <td>{{invoice.vendor}}</td>
+                            <td>{{invoice.date_created}}</td>
+                            <td>{{invoice.status}}</td>
+                            <td><a class="btn btn-sm btn-info" href="">Approve</a></td>
+    
+                            <td><a class="btn btn-sm btn-secondary" href="">Pay</a></td>
+    
+                        </tr>
+                    {% endfor %}
+    
+            
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
