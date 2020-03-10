@@ -16,7 +16,7 @@ class BuyerSerializer(serializers.ModelSerializer):
         
 class InvoiceSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('name','status', 'buyer','status','invoice')
+        fields = ('id','name','status', 'buyer','status','invoice')
         model = Invoice
 
 class UserSerializer(serializers.ModelSerializer):
